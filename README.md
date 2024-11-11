@@ -10,7 +10,7 @@ CupcakeCorner es una app desarrollada en SwiftUI. De pedidos de cupcakes que per
   
 ## Debugging con LLDB:
 
-Al intentar enviar los datos de la clase Order al servidor, las claves JSON contenían un guion bajo (_),(**1ª FOTO**) lo que impedía que coincidiese con el formato esperado por la API. Se resuelve utilizando un breakpoint en LLDB(**2ª FOTO**) para rastrear el flujo de codificación y mapear con enum codingKeys 
+Al intentar enviar los datos de la clase Order al servidor, las claves JSON contenían un guion bajo (_), (**1ª FOTO**) lo que impedía que coincidiese con el formato esperado por la API. Se resuelve utilizando un breakpoint en LLDB(**2ª FOTO**) para rastrear el flujo de codificación y mapear con enum codingKeys 
 
 <div style="display: flex; justify-content: space-around;">
   <img src="https://github.com/user-attachments/assets/5fbc99a2-649d-47fe-b7b9-2ae5137e8ba8" alt="Funcionamiento en el simulador" width="45%" />
