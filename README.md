@@ -8,9 +8,9 @@ CupcakeCorner es una app desarrollada en SwiftUI. De pedidos de cupcakes que per
 - Formulario para datos de cliente: Cumplimentar datos personales de cliente, uso de Form(datos personales), .disabled(para deshabilitar), @Bindable(actualizar vista automaticamente si alguna propiedad cambia)
 - Cálculo de Coste en Tiempo Real: Propiedad calculada(considera cantidad, tipo y extras), solicitud HTTP asíncrona(uso de **async y await**), URLSession(gestión de solicitudes HTTP), ScrollView, AsyncImage(carga y muestra imagenes), ProgressView(indicador de carga)
   
-## Depuración y Funcionamiento en el Simulador
+## Debugging con LLDB:
 
-A continuación, se muestran dos imágenes. La primera captura el funcionamiento de la aplicación en el simulador de iOS, mientras que la segunda muestra cómo traté el debugging en Xcode.
+Al intentar enviar los datos de la clase Order al servidor, las claves JSON contenían un guion bajo (_),(**1ª FOTO**) lo que impedía que coincidiese con el formato esperado por la API. Se resuelve utilizando un breakpoint en LLDB(**2ª FOTO**) para rastrear el flujo de codificación y mapear con enum codingKeys 
 
 <div style="display: flex; justify-content: space-around;">
   <img src="https://github.com/user-attachments/assets/5fbc99a2-649d-47fe-b7b9-2ae5137e8ba8" alt="Funcionamiento en el simulador" width="45%" />
