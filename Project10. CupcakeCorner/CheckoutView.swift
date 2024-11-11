@@ -11,6 +11,8 @@ struct CheckoutView: View {
     var order: Order
     @State private var confirmationMessage = ""
     @State private var showingConfirmation = false
+    @State private var showingError = false
+    @State private var errorMessage = ""
     
     var body: some View {
         ScrollView {
@@ -40,11 +42,19 @@ struct CheckoutView: View {
         .navigationTitle("Check out")
         .navigationBarTitleDisplayMode(.inline)
         .scrollBounceBehavior(.basedOnSize)// Controlo el efecto rebote de ScrollView
+        // Alerta para confirmación pedido
         .alert("Thank you!", isPresented: $showingConfirmation) {
             Button("OK") { }
             
         } message: {
             Text(confirmationMessage)
+        }
+        // Alerta para conexión internet
+        .alert("Error", isPresented: $showingError) {
+            Button("OK") { }
+            
+        } message: {
+            Text(errorMessage)
         }
     }
     // Función para realizar el pedido de forma asíncrona
@@ -69,6 +79,9 @@ struct CheckoutView: View {
             
         } catch {
             print("Check out failed: \(error.localizedDescription)")
+            // CHALLENGE 2:
+            errorMessage = "Please check your internet connection and try again. "
+            showingError = true
         }
         
         
