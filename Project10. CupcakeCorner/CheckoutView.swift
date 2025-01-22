@@ -22,9 +22,10 @@ struct CheckoutView: View {
                     image
                         .resizable()
                         .scaledToFit()
+                        .accessibilityHidden(true)
                 }placeholder: {
                     ProgressView() // Muestra imagen de indicador de carga mientras la imagen se descarga para su visualización
-                    
+                        .accessibilityHidden(true)
                 }
                 .frame(height: 233)
                 
@@ -38,6 +39,9 @@ struct CheckoutView: View {
                 .padding()
                 .buttonStyle(.borderedProminent)
             }
+            .accessibilityElement()
+            .accessibilityLabel("Your order costs \(order.cost,format: .currency(code:"EUR"))")
+            
         }
         .navigationTitle("Check out")
         .navigationBarTitleDisplayMode(.inline)
